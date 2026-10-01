@@ -1,8 +1,17 @@
-import React from 'react'
-import HomePage from './pages/HomePage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const App = () => {
-  return <HomePage />
+import HomePage from "./pages/HomePage";
+import NewsDetailPage from "./pages/NewsDetailPage";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/news/:id" element={<NewsDetailPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
